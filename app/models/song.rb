@@ -7,5 +7,6 @@ class Song < ActiveRecord::Base
 
   def artist_name=(name)
     name = Artist.find_or_create_by(name)
+    Song.artist.name = name
   end
 end
